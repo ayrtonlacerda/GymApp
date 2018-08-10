@@ -5,7 +5,7 @@ import {
   ScrollView
 } from 'react-native';
 import Itens from './Itens';
-import axios from 'axios';
+//import axios from 'axios';
 
 export default class ListaItens extends Component {
   state = {
