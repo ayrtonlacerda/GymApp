@@ -279,6 +279,7 @@ export default class ListaItens extends Component {
                sinopse={lista.overview}
                capa={lista.poster_path}
                backdrop={lista.backdrop_path}
+               popularity={lista.popularity}
              />)}
         </ScrollView>
       </View>
@@ -289,6 +290,7 @@ export default class ListaItens extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#060606'
+    backgroundColor: '#060606',
+    alignItems: 'center',
   },
 });

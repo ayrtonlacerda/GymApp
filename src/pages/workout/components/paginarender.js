@@ -14,7 +14,7 @@ export default class PaginaRender extends Component {
         modalVisible: false,
         serie1: [],
     }
-    
+
     componentWillMount = () => {
        // this.setState({ serie1: this.props.serie });
     }
@@ -26,21 +26,19 @@ export default class PaginaRender extends Component {
   render() {
     return (
 
-     
-    <TouchableOpacity onPress={() => {this.setModalVisible(true);}} activeOpacity={0.6}> 
+
+    <TouchableOpacity onPress={() => { this.setModalVisible(true); }} activeOpacity={0.6}>
     <Modal
         animationType="slide"
         transparent={false}
         visible={this.state.modalVisible}
         onRequestClose={() => { this.setModalVisible(false); }}
-        >
-    
+    >
+
     <Text>{this.props.exercicio1}</Text>
 
-        
-       
-
-    </Modal>   
+    </Modal>
+    
         <View style={styles.cabecalhoTreinos}>
             <Image style={styles.borders} source={this.props.imagem} />
             <View style={styles.textComponent}>
@@ -50,5 +48,5 @@ export default class PaginaRender extends Component {
         </View>
     </TouchableOpacity>
     );
-  } 
+  }
 }

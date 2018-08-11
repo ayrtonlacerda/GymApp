@@ -12,10 +12,6 @@ import ListaItens from '../../components/ListaItens';
 
 export default class Feed extends Component {
 
-  static navigationOptions = {
-    header: null,
-  }
-
   render() {
     return (
       <View style={styles.container}>
@@ -23,9 +19,9 @@ export default class Feed extends Component {
           <Text style={styles.headerTitle}>
             Feed
            </Text>
-         </View>
-
+         </View>        
          <ListaItens />
+
       </View>
     );
   }

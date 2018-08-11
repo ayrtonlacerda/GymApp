@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 20,
     fontWeight: 'bold',
+  },
+
+  body: {
+    alignItems: 'center'
   }
 });
 

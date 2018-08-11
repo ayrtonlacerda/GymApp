@@ -21,9 +21,8 @@ export default class Workout extends Component {
       {
         tipo: 'Treino A',
         descricao: 'Peito e Triceps',
-        imagem: treinoA,
-             
-            
+        imagem: treinoA,    
+
                exercicio1: 'Pull-over',
               repeticao1: 3,
               descanso1: '45s',
@@ -32,11 +31,8 @@ export default class Workout extends Component {
               repeticao2: 3,
               descanso2: '45s',
               peso2: '20 Kg',
-        },    
-     
-  
-
-      {
+        },
+        {
         tipo: 'Treino B',
         descricao: 'Costas e Biceps',
         imagem: treinoB,
@@ -65,7 +61,7 @@ export default class Workout extends Component {
       }
     ],
   }
-  
+
   render() {
     return (
         <View style={styles.container}>
@@ -73,18 +69,18 @@ export default class Workout extends Component {
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>
                     Workout
-                </Text> 
+                </Text>
             </View>
 
           <ScrollView>
             <View style={styles.body}>
               {this.state.treino.map(treinos =>
-               <PaginaRender key={treinos.tipo} 
+               <PaginaRender key={treinos.tipo}
                              tipo={treinos.tipo}
                              descricao={treinos.descricao}
                              imagem={treinos.imagem}
-                             exercicio1={treinos.exercicio1} 
-              />) }
+                             exercicio1={treinos.exercicio1}
+               />) }
             </View>
           </ScrollView>
 
@@ -92,4 +88,3 @@ export default class Workout extends Component {
     );
   }
 }
-

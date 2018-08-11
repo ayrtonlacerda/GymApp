@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   Modal,
+  ScrollView
 } from 'react-native';
 import Item from '../pages/item';
 
@@ -28,25 +29,35 @@ export default class Itens extends Component {
     return (
       <TouchableOpacity onPress={() => { this.setModalVisible(true); }} activeOpacity={0.9}>
         <Modal
+          style={styles.modal}
           animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose={() => { this.setModalVisible(false); }}
-          >
-          <Image style={styles.headerImage} source={{ uri: `https://image.tmdb.org/t/p/original${this.props.backdrop}` }} />
+        >
 
-            <Text style={styles.headerTitulo}>
+
+         <View style={styles.containerModal}>
+
+           <Image style={styles.modalImage} source={{ uri: `https://image.tmdb.org/t/p/original${this.props.backdrop}` }} />
+
+            <Text style={styles.titleModal}>
               {this.props.title}
-            </Text>
+             </Text>
+             <Text style={styles.dateModal}>
+              Data de lançamento: {this.props.date}
+              </Text>
+              <Text style={styles.popularityModal}>
+              Popularidade: {this.props.popularity}
+               </Text>
 
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodySeparador}>
-                ________________________________________________
-               </Text>
-               <Text style={styles.bodyText}>
-                 {this.props.sinopse}
-               </Text>
-            </View>
+            <ScrollView style={styles.scrollModal}>
+             <Text style={styles.textModal}>
+               {this.props.sinopse}
+              </Text>
+            </ScrollView>
+          </View>
+
 
       </Modal>
 
@@ -72,53 +83,85 @@ export default class Itens extends Component {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginTop: 5,
-    height: 300,
-    backgroundColor: '#e0e0e0'
+    marginTop: 15,
+    //height: 320,
+    width: 350,
+    backgroundColor: '#e0e0e0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
   },
 
   //HEADER
   headerBox: {
-    flexDirection: 'row',
-    padding: 5,
-  },
-
-  headerText: {
     flexDirection: 'column',
-    margin: 10,
-    alignSelf: 'center'
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   headerImage: {
-    height: 100,
-    width: 70,
+    height: 250,
+    width: 180,
     borderRadius: 4
   },
 
   headerTitulo: {
-    fontSize: 18,
+    fontSize: 20,
     margin: 1,
     fontWeight: 'bold',
-    color: '#2f2f2f'
+    color: '#2f2f2f',
+    alignSelf: 'center',
+    textAlign: 'center',
   },
 
   headerDate: {
 
   },
 
-  //BODY
+  //Modal
 
-  bodyBox: {
-
+  containerModal: {
+    backgroundColor: '#e8e5e5',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 
-  bodyText: {
-
+  scrollModal: {
+    padding: 5,
   },
 
-  bodySeparador: {
-    justifyContent: 'center',
-    alignSelf: 'center',
-    padding: 5
+  modalImage: {
+    width: 400,
+    height: 250,
+  },
+
+  titleModal: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: 5,
+    textAlign: 'center',
+  },
+
+  dateModal: {
+    fontSize: 16,
+    color: '#2f2f2f',
+    marginTop: 2,
+    textAlign: 'center',
+  },
+
+  popularityModal: {
+    fontSize: 16,
+    color: '#2f2f2f',
+  },
+
+  textModal: {
+    fontSize: 14,
+    color: '#2f2f2f',
+    marginTop: 20,
+    padding: 15,
   }
+
 });

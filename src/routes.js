@@ -10,16 +10,12 @@ import Item from './pages/item';
 
 const Routes = StackNavigator(
   {
-    Login: { screen: Workout, headerMode: 'none', header: null },
+    Login: { screen: Login, headerMode: 'none', header: null },
     Logged: DrawerNavigator(
       {
         Feed: { screen: Feed },
         Workout: { screen: Workout },
-      }, {
-        navigationOptions: {
-          header: null,
-        }
-      }
+      },
     ),
   },
   {
