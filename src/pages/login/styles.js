@@ -11,7 +11,7 @@ const style = StyleSheet.create({
    alignItems: 'stretch',
    justifyContent: 'center',
    padding: metric.basePadding * 2,
-   backgroundColor: colors.darkTransparent,
+   backgroundColor: colors.primaryTransparent,
  },
 
  image: {

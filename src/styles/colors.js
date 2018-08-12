@@ -11,8 +11,10 @@ export default {
   yellow: '#d2b755',
   grey: '#474b54',
 
-  primary: '#7A91CA',
-  secundary: '#444A5A',
+  primary: '#06608c',
+  primaryTransparent: 'rgba(6, 96, 140, 0.83)',
+  secundary: '#919191',
+  secundaryTranparent: 'rgba(145, 145, 145, 0.65)',
   success: '#9DCA83',
   danger: '#E37A7A',
 

@@ -83,13 +83,16 @@ export default class Itens extends Component {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginTop: 15,
+    marginTop: 7,
     //height: 320,
     width: 350,
     backgroundColor: '#e0e0e0',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#333',
+
   },
 
   //HEADER

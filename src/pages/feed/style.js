@@ -4,20 +4,39 @@ import { colors, metric } from '../../styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.grey,
+    backgroundColor: colors.light,
   },
 
   header: {
-    backgroundColor: colors.halfblack,
-    padding: 18,
-    justifyContent: 'center',
+    backgroundColor: colors.primary,
+    padding: 14,
+    paddingTop: 7,
+    flexDirection: 'row',
+    //justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  icon: {
+    color: colors.white,
+    alignSelf: 'flex-start',
+  },
+
+  viewIcon: {
+    marginLeft: 4,
+  },
+
+  viewTitle: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    marginLeft: 120,
   },
 
   headerTitle: {
     color: colors.white,
-    fontSize: 20,
+    fontSize: 23,
     fontWeight: 'bold',
+
   },
 
   body: {

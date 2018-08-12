@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import {
   View,
@@ -7,11 +5,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default class Exit extends Component {
+export default class Perfil extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the MyComponent component</Text>
+        <Text>Perfil</Text>
       </View>
     );
   }

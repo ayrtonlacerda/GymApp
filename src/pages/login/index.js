@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TextInput,
   ImageBackground,
+  StatusBar,
   TouchableOpacity,
 } from 'react-native';
 
@@ -36,6 +37,8 @@ export default class Login extends Component {
         style={styles.ImageBackground}
         resizeMode="cover"
       >
+
+      <StatusBar backgroundColor='rgba(6, 96, 140, 0.83)' />
         <View style={styles.container}>
 
           <Image style={styles.image} source={require('../../assents/imgs/corpofit.png')} />

@@ -4,17 +4,21 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation';
 import Login from './pages/login';
 import Feed from './pages/feed';
 import Workout from './pages/workout';
-import Coach from './pages/coach';
-import Item from './pages/item';
+import Config from './pages/config';
+import Perfil from './pages/perfil';
+
 
 
 const Routes = StackNavigator(
   {
-    Login: { screen: Login, headerMode: 'none', header: null },
+    Login: { screen: Workout },
     Logged: DrawerNavigator(
       {
         Feed: { screen: Feed },
+        Perfil: { screen: Perfil },
         Workout: { screen: Workout },
+        Configurações: { screen: Config },
+        Sair: { screen: Login },
       },
     ),
   },

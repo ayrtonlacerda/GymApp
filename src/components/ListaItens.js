@@ -290,7 +290,7 @@ export default class ListaItens extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#060606',
+    backgroundColor: 'rgba(6, 96, 140, 0.83)',
     alignItems: 'center',
   },
 });
