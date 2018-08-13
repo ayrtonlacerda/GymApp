@@ -8,7 +8,6 @@ import {
   Modal,
   ScrollView
 } from 'react-native';
-import Item from '../pages/item';
 
 export default class Itens extends Component {
 
