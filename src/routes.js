@@ -9,7 +9,7 @@ import Perfil from './pages/perfil';
 
 const Routes = StackNavigator(
   {
-    Login: { screen: Workout },
+    Login: { screen: Login },
     Logged: DrawerNavigator(
       {
         Feed: { screen: Feed },

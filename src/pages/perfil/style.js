@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    //backgroundColor: colors.primary,
+    backgroundColor: colors.primary,
     padding: 14,
     paddingTop: 7,
     //justifyContent: 'center',
     //backgroundColor: colors.secundaryTranparent,
     alignItems: 'stretch',
-    flexDirection: 'row', 
+    flexDirection: 'row',
   },
 
   icon: {
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     flex: 1,
     //justifyContent: 'space-between',
     //alignItems: 'stretch',
-    //marginLeft: 105, 
-    justifyContent: 'center', 
+    //marginLeft: 105,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 23,
     fontWeight: 'bold',
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     //backgroundColor: colors.primary,
     padding: 14,
     paddingTop: 7,
-    //marginTop: metric.baseMargin,  
+    //marginTop: metric.baseMargin,
     justifyContent: 'flex-start',
     backgroundColor: colors.secundaryTranparent,
     alignItems: 'center',
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
 
   txtAtributos: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
     color: colors.white,
   },
@@ -104,17 +104,18 @@ const styles = StyleSheet.create({
   },
 
   imagemPerfil: {
-    height: 180,  
-    width: 180,    
-    borderRadius: 70,
-    alignItems: 'center', 
+    margin: metric.baseMargin,
+    height: 180,
+    width: 180,
+    borderRadius: 90,
+    alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: 'rgba(0,0,0,0.2)',
   },
 
   teste: {
-    alignItems: 'center', 
+    alignItems: 'center',
     justifyContent: 'center',
   }
 

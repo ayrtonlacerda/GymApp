@@ -87,8 +87,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  body: {
-
+  modal: {
+    flex: 1,
+    backgroundColor: colors.primaryTransparent,
   }
 });
 

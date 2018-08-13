@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -8,29 +8,54 @@ import {
   Modal
 } from 'react-native';
 import styles from '../style';
+import Coach from './coach';
 
-const PaginaRender = ({ treinos }) => (
-    <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
-      <Modal
+export default class PaginaRender extends Component {
+
+  state = {
+    modalVisible: false,
+  };
+
+  setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
+
+  render() {
+    return (
+      <TouchableOpacity onPress={() => this.setModalVisible(true)} activeOpacity={0.6}>
+        <Modal
           animationType="slide"
-          transparent={false}
-          visible={false}
-          onRequestClose={() => {}}
-      >
+          transparent={true}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+             this.setModalVisible(false)
+          }}
+        >
+        <ScrollView>
+          <View style={styles.modal}>
+            {this.props.treinos.serie.map(series =>
+               <Coach
+                key={series.exercicio}
+                exercicio={series.exercicio}
+                repeticao={series.repeticao}
+                descanso={series.descanso}
+                peso={series.peso}
+               />)
+            }
+          </View>
+        </ScrollView>
+        </Modal>
 
-      {treinos.serie.map(treino => <Text key={treino.exercicio}>{treino.exercicio}</Text>)}
+          <View style={styles.cabecalhoTreinos}>
+              <Image style={styles.borders} source={this.props.treinos.imagem} />
+              <View style={styles.textComponent}>
+                  <Text style={styles.txtTipo}>{this.props.treinos.tipo}</Text>
+                  <Text style={styles.txtDescricao}>{this.props.treinos.descricao}</Text>
+              </View>
 
-      </Modal>
+          </View>
 
-        <View style={styles.cabecalhoTreinos}>
-            <Image style={styles.borders} source={treinos.imagem} />
-            <View style={styles.textComponent}>
-                <Text style={styles.txtTipo}>{treinos.tipo}</Text>
-                <Text style={styles.txtDescricao}>{treinos.descricao}</Text>
-            </View>
-        </View>
-
-      </TouchableOpacity>
-  );
-
-export default PaginaRender;
+        </TouchableOpacity>
+      );
+  }
+}
