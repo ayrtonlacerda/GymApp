@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     flexDirection: 'row',
   },
-
+  
   icon: {
     color: colors.white,
     alignSelf: 'flex-start',
