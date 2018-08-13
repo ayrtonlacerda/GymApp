@@ -4,6 +4,7 @@ import {
   Text,
   StatusBar,
   ScrollView,
+  FlatList,
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
@@ -24,57 +25,53 @@ export default class Workout extends Component {
         tipo: 'Treino A',
         descricao: 'Peito e Triceps',
         imagem: treinoA,
-
-              exercicio1: 'Pull-over',
-              repeticao1: 3,
-              descanso1: '45s',
-              peso1: '35 Kg',
-              
-              exercicio2: 'Supino inclinado',
-              repeticao2: 3,
-              descanso2: '45s',
-              peso2: '20 Kg',
-
-              exercicio3: 'Supino inclinado',
-              repeticao3: 3,
-              descanso3: '45s',
-              peso3: '20 Kg',
-
-              exercicio4: 'Supino inclinado',
-              repeticao4: 3,
-              descanso4: '45s',
-              peso4: '20 Kg',
-
-        },
-        {
+        serie:[
+                {
+                exercicio: 'Pull-over',
+                repeticao: 3,
+                descanso: '45s',
+                peso: '35 Kg',
+                },{
+                exercicio: 'Supino inclinado',
+                repeticao: 3,
+                descanso: '45s',
+                peso: '20 Kg',
+                },{
+                exercicio: 'Supino inclinado',
+                repeticao: 3,
+                descanso: '45s',
+                peso: '20 Kg',
+                },{
+                exercicio: 'Supino inclinado',
+                repeticao: 3,
+                descanso: '45s',
+                peso: '20 Kg',
+              },
+            ],
+      },
+      {
         tipo: 'Treino B',
         descricao: 'Costas e Biceps',
         imagem: treinoB,
-        exercicio1: 'Puxada Supinad',
-              repeticao1: 3,
-              descanso1: '45s',
-              peso1: '35 Kg',
-              exercicio2: 'Supino inclinado',
-              repeticao2: 3,
-              descanso2: '45s',
-              peso2: '20 Kg',
+        serie: [
+                {
+                    exercicio: 'Puxada Supinad',
+                    repeticao: 3,
+                    descanso: '45s',
+                    peso: '35 Kg',
+                },
+                {
+                    exercicio: 'Supino inclinado',
+                    repeticao: 3,
+                    descanso: '45s',
+                    peso: '20 Kg',
+                }
+              ]
       },
-
-      {
-        tipo: 'Treino C',
-        descricao: 'Perna e Abdomem',
-        imagem: treinoC,
-        exercicio1: 'Leg 45',
-              repeticao1: 3,
-              descanso1: '45s',
-              peso1: '35 Kg',
-              exercicio2: 'Supino inclinado',
-              repeticao2: 3,
-              descanso2: '45s',
-              peso2: '20 Kg',
-      }
-    ],
+    ]
   }
+
+  renderItem = ({ item }) => (<PaginaRender treinos={item} />);
 
   render() {
     return (
@@ -99,17 +96,12 @@ export default class Workout extends Component {
               </View>
             </View>
 
-          <ScrollView>
-            <View style={styles.body}>
-              {this.state.treino.map(treinos =>
-               <PaginaRender key={treinos.tipo}
-                             tipo={treinos.tipo}
-                             descricao={treinos.descricao}
-                             imagem={treinos.imagem}
-                             exercicio1={treinos.exercicio1}
-               />) }
-            </View>
-          </ScrollView>
+            <FlatList
+              data={this.state.treino}
+              keyExtractor={item => String(item.tipo)}
+              renderItem={this.renderItem}
+            />
+
         </View>
       </ImageBackground>
     );
