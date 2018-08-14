@@ -4,17 +4,23 @@ import {
   View,
   Text,
   Image,
-  StyleSheet,
   TextInput,
   ImageBackground,
   StatusBar,
   TouchableOpacity,
+  Picker
 } from 'react-native';
 
 import styles from './styles';
 
 
 export default class Login extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = { unidade: '' };
+  }
 
   static navigationOptions ={
     header: null,
@@ -48,17 +54,16 @@ export default class Login extends Component {
               style={styles.input}
               autoCapitalize="none"
               autoCorrect={false}
-              placeholder="Digite seu usuario"
+              placeholder="Digite seu CPF"
               underlineColorAndroid="rgba(0,0,0,0)"
             />
-            <TextInput
-              style={styles.input}
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Digite sua Senha"
-              underlineColorAndroid="rgba(0,0,0,0)"
-              textContentType="password"
-            />
+ 
+          <Picker style={styles.estiloPicker} placeholder="Selecione a sua unidade" selectedValue={this.state.unidade} onValueChange={op => { this.setState({ unidade: op }); }}>
+            <Picker.Item label='Taguatinga' value='taguatinga' />
+            <Picker.Item label='São Sebastião' value='saosebastiao' />
+            <Picker.Item label='Sobradinho' value='sobradinho' />
+            <Picker.Item label='Riacho Fundo I' value='riachofundo1' /> 
+          </Picker>
 
             <TouchableOpacity style={styles.button} onPress={this.navigateToLogged}>
               <Text style={styles.buttonText}>

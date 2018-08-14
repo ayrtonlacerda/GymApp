@@ -41,6 +41,14 @@ const style = StyleSheet.create({
     color: colors.white,
     fontWeight: 'bold',
     fontSize: 14,
+  },
+
+  estiloPicker: {
+    backgroundColor: colors.secundaryTranparent,  
+    borderRadius: metric.baseRadius,
+    marginTop: metric.baseMargin / 4,
+    height: 50,
+    paddingHorizontal: metric.basePadding,  
   }
 });
 
