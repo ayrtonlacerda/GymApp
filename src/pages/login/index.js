@@ -57,13 +57,15 @@ export default class Login extends Component {
               placeholder="Digite seu CPF"
               underlineColorAndroid="rgba(0,0,0,0)"
             />
- 
-          <Picker style={styles.estiloPicker} placeholder="Selecione a sua unidade" selectedValue={this.state.unidade} onValueChange={op => { this.setState({ unidade: op }); }}>
-            <Picker.Item label='Taguatinga' value='taguatinga' />
-            <Picker.Item label='São Sebastião' value='saosebastiao' />
-            <Picker.Item label='Sobradinho' value='sobradinho' />
-            <Picker.Item label='Riacho Fundo I' value='riachofundo1' /> 
-          </Picker>
+          <View style={styles.forms2}>
+            <Text style={styles.textUnidade}> Unidade: </Text>  
+              <Picker style={styles.estiloPicker} placeholder="Selecione a sua unidade" selectedValue={this.state.unidade} onValueChange={op => { this.setState({ unidade: op }); }}>
+                <Picker.Item label='Taguatinga' value='taguatinga' />
+                <Picker.Item label='São Sebastião' value='saosebastiao' />
+                <Picker.Item label='Sobradinho' value='sobradinho' />
+                <Picker.Item label='Riacho Fundo I' value='riachofundo1' /> 
+              </Picker>
+          </View>
 
             <TouchableOpacity style={styles.button} onPress={this.navigateToLogged}>
               <Text style={styles.buttonText}>

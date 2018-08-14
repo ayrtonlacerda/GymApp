@@ -28,7 +28,7 @@ const style = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: colors.yellow,
+    backgroundColor: colors.secundaryTranparent,
     borderRadius: metric.baseRadius,
     height: 50,
     marginTop: metric.baseMargin * 2,
@@ -43,12 +43,23 @@ const style = StyleSheet.create({
     fontSize: 14,
   },
 
-  estiloPicker: {
-    backgroundColor: colors.secundaryTranparent,  
+  estiloPicker: {   
     borderRadius: metric.baseRadius,
     marginTop: metric.baseMargin / 4,
     height: 50,
     paddingHorizontal: metric.basePadding,  
+    flex: 7   
+  },
+
+  forms2: {
+    flexDirection: 'row',
+    backgroundColor: colors.whiteTransparent  
+  },
+
+  textUnidade: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center' 
   }
 });
 
