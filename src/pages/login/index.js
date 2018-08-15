@@ -16,15 +16,14 @@ import styles from './styles';
 
 export default class Login extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = { unidade: '' };
-  }
-
   static navigationOptions ={
     header: null,
   }
+
+  state = {
+    unidade: ''
+  }
+
 
   navigateToLogged = () => {
     const resetAction = NavigationActions.reset({
@@ -58,12 +57,12 @@ export default class Login extends Component {
               underlineColorAndroid="rgba(0,0,0,0)"
             />
           <View style={styles.forms2}>
-            <Text style={styles.textUnidade}> Unidade: </Text>  
+            <Text style={styles.textUnidade}> Unidade: </Text>
               <Picker style={styles.estiloPicker} placeholder="Selecione a sua unidade" selectedValue={this.state.unidade} onValueChange={op => { this.setState({ unidade: op }); }}>
                 <Picker.Item label='Taguatinga' value='taguatinga' />
                 <Picker.Item label='São Sebastião' value='saosebastiao' />
                 <Picker.Item label='Sobradinho' value='sobradinho' />
-                <Picker.Item label='Riacho Fundo I' value='riachofundo1' /> 
+                <Picker.Item label='Riacho Fundo I' value='riachofundo1' />
               </Picker>
           </View>
 

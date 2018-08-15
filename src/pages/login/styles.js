@@ -43,23 +43,28 @@ const style = StyleSheet.create({
     fontSize: 14,
   },
 
-  estiloPicker: {   
-    borderRadius: metric.baseRadius,
-    marginTop: metric.baseMargin / 4,
-    height: 50,
-    paddingHorizontal: metric.basePadding,  
-    flex: 7   
-  },
+  estiloPicker: {
+    //height: 50,
+    //paddingHorizontal: metric.basePadding,
+    flex: 7,
+    },
 
   forms2: {
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
     flexDirection: 'row',
-    backgroundColor: colors.whiteTransparent  
+    padding: metric.basePadding,
+    borderRadius: metric.baseRadius,
+    marginTop: metric.baseMargin / 3,
+    backgroundColor: colors.whiteTransparent
   },
 
   textUnidade: {
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'center' 
+    alignSelf: 'center'
   }
 });
 

@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './style';
 
-import ListaItens from '../../components/ListaItens';
+import ListaItens from './components/listaitens';
 
 export default class Feed extends Component {
 

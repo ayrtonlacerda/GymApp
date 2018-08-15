@@ -4,7 +4,7 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
-import Itens from './Itens';
+import Itens from '../itens';
 //import axios from 'axios';
 
 export default class ListaItens extends Component {
